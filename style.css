@@ -38,4 +38,48 @@
         outline: 3px solid var(--color-cyan);
         outline-offset: 4px;
     }
-    
+
+
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(13, 28, 42, 0.96);
+        border-bottom: 1px solid var(--color-border);
+        backdrop-filter: blur(16px);
+    }
+
+    .navbar {
+        padding: 18px 0;
+    }
+
+    .navbar-brand {
+        color: var(--color-text);
+        font-size: 1.55rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+    }
+
+    .navbar-brand:hover {
+        color: var(--color-cyan);
+    }
+
+    .brand-icon {
+        color: var(--color-cyan);
+        font-size: 1.8rem;
+        margin-inline-end: 8px;
+    }
+
+    .navbar-nav {
+        gap: 16px;
+    }
+
+    .navbar-dark .navbar-nav .navbar-link {
+        color: var(--color-muted);
+        font-weight: 500;
+    }
+
+    .navbar-dark .navbar-nav .navbar-link:hover,
+    .navbar-dark .navbar-nav .navbar-link:focus {
+        color: var(--color-cyan);
+    }
