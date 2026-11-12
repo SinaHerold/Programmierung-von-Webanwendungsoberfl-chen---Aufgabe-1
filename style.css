@@ -204,3 +204,38 @@ btn-ecopulse:hover {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
 }
 
+.emission-table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--color-text);
+    --bs-table-border-color: var(--color-border);
+
+    width: 100%;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.emission-table caption {
+    caption-side: bottom;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    padding-top: 20px;
+}
+
+.emission-table thead th {
+    padding: 18px 16px;
+    color: var(--color-cyan);
+    background: rgba(0, 229, 255, 0.05);
+    font-size: 0.83rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.emission-table tbody td {
+    padding: 20px 16px;
+    color: var(--color-text);
+}
+
+.emission-table tbody tr:hover {
+    background: rgba(0, 229, 255, 0.045);
+}
+
