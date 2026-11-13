@@ -166,7 +166,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        
+        const [sortField, sortDirection] = sortValue.split("-");
+        filteredData.sort(function (a, b) {
+            let comparison = 0;
+
+            if (sortField === "emissions") {
+                comparison = a.emissions - b.emissions;
+            } else if (sortField === "country") {
+                comparison = a.country.localeCompare(
+                    b.country,
+                    "de"
+                );
+            } else {
+                comparison = a.company.localeCompare(
+                    b.company,
+                    "de"
+                );
+            }
+
+            return sortDirection === "desc"
+                ? -comparison
+                : comparison;
+        });
+
+        tableBody.replaceChildren();
+
+        filteredData.forEach(function (item) {
+            const row
+        })
     }
     
     
