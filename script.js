@@ -214,8 +214,12 @@ document.addEventListener("DOMContentLoaded", function () {
             tableBody.appendChild(row);
         });
 
+        resultCount.textContent =
+            filteredData.length + " von " + emissionsData.length + " Unternehmen angezeigt ";
         
+        emptyState.hidden = filteredData.length !== 0;
     }
+    
     
     
 }
