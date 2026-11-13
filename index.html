@@ -89,8 +89,74 @@
             </div>
 
             <div class="data-card">
+                <div class="filter-bar">
+                    <label for="companySearch">
+                        Unternehmen suchen
+                    </label>
+                    <input
+                    type="search"
+                    id="companySearch"
+                    class="form-control"
+                    placeholder="Unternehmen eingeben ..."
+                    autocomplete="off"
+                    >
+                </div>
+
+                <dic class="filter-field">
+                    <label for="countryFilter">
+                        Land auswählen
+                    </label>
+                    <select
+                        id="countryFilter"
+                        class="form-select"
+                    >
+                        <option value="">Alle Läner</option>
+                    </select>
+                </dic>
+
+                <div class="filter-field">
+                    <label for="sortSelect">
+                        Sortieren nach
+                    </label>
+                    <select
+                        id="sortSelect"
+                        class="form-select"
+                    >
+                        <option value="company-asc">
+                            Unternehmen A-Z
+                        </option>
+                        <option value="company-desc">
+                            Unternehmen Z-A
+                        </option>
+                        <option value="country-asc">
+                            Land A-Z
+                        </option>
+                        <option value="country-desc">
+                            Land Z-A
+                        </option>
+                        <option value="emissions-asc">
+                            Emissionen steigend
+                        </option>
+                        <option value="emissions-desc">
+                            Emissionen absteigend
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <p id="resultCount"
+                class="result-count"
+                role="status"
+                aria-live="polite">
+            </p>
+
+            <div class="table-responsive">
                 <table class="table emission-table">
-                    <caption>Fiktive CO₂-Emissionsdaten zu Demonstrationszwecken.</caption>
+
+                    <caption>Alle CO₂-Emissionsdaten sind finktiv und dienen 
+                        ausschließlich Demonstrationszwecken.</caption>
+                    
                     <thead>
                         <tr>
                             <th scope="col">Unternehmen</th>
@@ -100,11 +166,16 @@
                         </tr>
                     </thead>
 
-                    <tbody id="emissionensTableBody">
+                    <tbody id="emissionsTableBody"></tbody>
 
-                    </tbody>
                 </table>
             </div>
+
+            <p id="emptyState"
+                class="empty-state"
+                hidden>Keine passenden Unternehmen gefunden.
+                        Bitte passe deine Suche oder Filter an.
+            </p>
 
         </div>
     </section>
