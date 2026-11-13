@@ -220,6 +220,10 @@ document.addEventListener("DOMContentLoaded", function () {
         emptyState.hidden = filteredData.length !== 0;
     }
     
+    searchInput.addEventListener("input", updateTable);
+    countryFilter.addEventListener("change", updateTable);
+    sortSelect.addEventListener("change", updateTable);
+
+    updateTabel();
     
-    
-}
+});
