@@ -286,10 +286,6 @@ btn-ecopulse:hover {
     .data-card {
         padding: 16px;
     }
-
-    .emission-table {
-        min-width: 650px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -302,5 +298,64 @@ btn-ecopulse:hover {
     *::after {
         animation-duration: 0.001ms !important;
         transition-duration: 0.001ms !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .data-card {
+        width: 100%;
+        min-width: 0;
+        padding: 14px;
+    }
+
+    .table-responsive {
+        overflow-x: visible;
+    }
+
+    .emission-table {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .emission-table thead {
+        display: none;
+    }
+
+    .emission-table tbody,
+    .emission-table tr,
+    .emission-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .emission-table tbody tr {
+        margin-bottom: 16px;
+        padding: 12px;
+        background: #102636;
+        border: 1px solid #284253;
+        border-radius: 10px;
+    }
+
+    .emission-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-itmes: flex-start;
+        gap: 12px;
+        padding: 10px 0;
+        overflow-wrap: anywhere;
+        border-bottom: 1px solid #284253;
+        text-align: right;
+    }
+
+    .emission-table tbody td::before {
+        content: attr(data-label);
+        flex: 0 0 42%;
+        color: #00E5FF;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .hero-section::after {
+        display: none;
     }
 }
