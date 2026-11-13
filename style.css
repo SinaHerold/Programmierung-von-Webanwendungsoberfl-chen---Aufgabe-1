@@ -10,7 +10,12 @@
 
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 90px;
+        scroll-padding-top: 0;
+    }
+
+    #emissionen,
+    #ueber-uns {
+        scroll-margin-top: 110px;
     }
 
     body {
