@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const navigation = document.getElementById('mainNavigation');
+    const menu = document.getElementById("mainNavigation");
 
-    if (!navigation) return;
+    const menuButton = document.querySelector(
+        '[data-bs-target="#mainNavigation"]'
+    );
 
-    const navigationLinks = navigation.querySelectorAll('.nav-link');
+    if (!menu || !menuButton) return;
 
-    navigationLinks.forEach(funktion (link) {
-        link.addEventListener('click', function () {
+    const links = menu.querySelectorAll(".nav-link");
+
+    links.forEach(funktion (link) {
+        link.addEventListener("click", function () {
         
-            if (navigation.classList.contains('show')) {
-                const collapse = bootstrap.Collapse.getOrCreateInstande(
-                    navigation,
-                    { toggle: false}
-                );
+            if (menu.classList.contains("show")) {
+                menuButton.click();
 
-                collapse.hide();
             }
         });
     });
