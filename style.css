@@ -261,3 +261,46 @@ btn-ecopulse:hover {
 }
 
 
+@media (max-width: 767px) {
+    .hero-section {
+        min-height: auto;
+        padding: 10px 0;
+    }
+
+    .hero-section::after {
+        width: 300px;
+        height: 300px;
+        right: -170px;
+        bottom: -100px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .data-section,
+    .about-section {
+        padding: 70px 0;
+    }
+
+    .data-card {
+        padding: 16px;
+    }
+
+    .emission-table {
+        min-width: 650px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
