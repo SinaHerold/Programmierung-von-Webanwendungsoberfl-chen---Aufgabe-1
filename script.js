@@ -192,8 +192,29 @@ document.addEventListener("DOMContentLoaded", function () {
         tableBody.replaceChildren();
 
         filteredData.forEach(function (item) {
-            const row
-        })
+            const row = document.createElement("tr");
+
+            row.appendChild(
+                createCell("Unternehmen", item.company)
+            );
+
+            row.appendChild(
+                createCell("Land", item.country)
+            );
+
+            row.appendChild(
+                createCell("Branche", item.sector)
+            );
+
+            row.appendChild(
+                createCell("CO₂-Emissionen (t)", numberFormatter.format(item.emissions)
+                )
+            );
+
+            tableBody.appendChild(row);
+        });
+
+        
     }
     
     
