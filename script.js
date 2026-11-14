@@ -93,28 +93,28 @@ document.addEventListener("DOMContentLoaded", function () {
         "emissionsTableBody"
     );
 
-    const tableBody = document.getElementById(
+    const searchInput = document.getElementById(
         "companySearch"
     );
 
-    const tableBody = document.getElementById(
+    const countryFilter = document.getElementById(
         "countryFilter"
     );
-    const tableBody = document.getElementById(
+    const sortSelect = document.getElementById(
         "sortSelect"
     );
 
-    const tableBody = document.getElementById(
+    const resultCount = document.getElementById(
         "resultCount"
     );
 
-    const tableBody = document.getElementById(
+    const emptyState = document.getElementById(
         "emptyState"
     );
 
     if (
         !tableBody ||
-        !searchImput ||
+        !searchInput ||
         !countryFilter ||
         !sortSelect ||
         !resultCount ||
