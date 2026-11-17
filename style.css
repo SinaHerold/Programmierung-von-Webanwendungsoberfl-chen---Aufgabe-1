@@ -570,3 +570,41 @@
     color: #A6B8C4;
     opacity: 1;
 }
+
+.filter-field .form-control,
+.filter-field .form-select,
+.direction-control .form-select {
+    color: #F3F8FA;
+    background-color: #07131D;
+}
+
+.filter-field .form-control:focus-visible,
+.filter-field .form-select:focus-visible,
+.direction-control .form-select:focus-visible {
+    outline: 3px solid #00E5FF;
+    outline-offset: 3px;
+    border-color: #00E5FF;
+    box-shadow: none;
+}
+
+.local-navigation nav a:focus-visible,
+.navbar .nav-link:focus-visible,
+.btn-ecopulse:focus-visible {
+    outline: 3px solid #00E5FF;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.result-count {
+    color: #C4D2DB;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.form-help {
+    margine-top: 8px;
+    margin-bottom: 0;
+    color: #B0C0CB;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
