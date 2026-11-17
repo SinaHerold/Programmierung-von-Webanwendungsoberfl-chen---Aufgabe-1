@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             emissions: 28700
         },
         {
-            company: "solar zukunft",
+            company: "Solar Zukunft",
             country: "Deutschland",
             sector: "Energie",
             emissions: 6200
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             company: "BLUEocean Logistics",
             country: "Irland",
-            sector: "Logistic",
+            sector: "Logistik",
             emissions: 45900
         },
         {
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     countryFilter.addEventListener("change", updateTable);
     sortSelect.addEventListener("change", updateTable);
 
-    updateTabel();
+    updateTable();
     
 });
 
