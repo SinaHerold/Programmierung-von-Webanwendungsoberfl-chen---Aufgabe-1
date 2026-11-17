@@ -464,29 +464,45 @@ btn-ecopulse:hover {
     }
 }
 
+.content-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.content-main {
+    min-width: 0;
+}
+
 .local-navigation {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 24px;
-    margin-bottom: 28px;
+    flex-direction: column;
+    gap: 28px;
+    padding: 24px;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    boder-radius: 12px;
+    border-radius: 14px;
+    min-width: 0;
 }
 
 .local-navigation nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.local-navigation h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text);
 }
 
 .local-navigation nav a {
     color: var(--color-muted);
     text-decoration: none;
-    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .local-navigation nav a:hover,
@@ -496,45 +512,56 @@ btn-ecopulse:hover {
 
 .direction-control {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .direction-control label {
     color: var(--color-text);
-    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .direction-control .form-select {
-    min-width: 220px;
+    width: 100%;
+    min-width: 0;
     background-color: #07131D;
     color: var(--color-text);
-    border: 1px solid var(--color-border);
+    font-size: 0.85rem;
+}
+
+
+.rtl-layout .content-layout {
+    grid-template-columns: minmax(0, 1fr) 220px;
 }
 
 .rtl-layout .local-navigation {
-    flex-direction: row-reverse;
+    grid-column: 2;
+    grid-row: 1;
 }
 
-.local-navigation, .data-section, .about-section {
+.rtl-layout .content-main {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.local-navigation, .content-main {
     direction: ltr;
     text-align: left;
 }
 
-@media (max-width: 767px) {
-    .local-navigation,
-    .direction-control {
-        flex-direction: column;
-        align-items: stretch;
+@media (max-width: 991px) {
+    .content-layout,
+    .rtl-layout .content-layout {
+        grid-template-columns: minmax(0, 1fr);
     }
 
-    .local-navigation nav {
-        flex-direction: column;
-        gap: 12px;
+    .local-navigation, .rtl-layout .local-navigation {
+        grid-column: 1;
+        grid-row: 1;
     }
 
-    .direction-control .form-select {
-        min-width: 0;
-        width: 100%;
+    .content-main, .rtl-layout .content-main {
+        grid-column: 1;
+        grid-row: 2;
     }
 }
