@@ -227,3 +227,19 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTabel();
     
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const directionSelect =
+        document.getElementById("directionSelect");
+    
+    if (!directionSelect) return;
+
+    directionSelect.addEventListener("change", function () {
+        const direction = directionSelect.value;
+
+        document.body.classList.toggle(
+            "rtl-layout",
+            direction === "rtl"
+        );
+    });
+});

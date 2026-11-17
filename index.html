@@ -81,123 +81,151 @@
 
     <section id="emissionen" class="data-section">
         <div class="container">
-
             <div class="section-heading">
                 <p class="eyebrow">DATEN & TRANSPARENZ</p>
                 <h2>CO₂-Emissionen im Überblick</h2>
                 <p>Vergleiche Emissionsdaten verschiedener Unternehmen und Länder.</p>
             </div>
 
-            <div class="local-navigation">
+            <div class="content-layout">
+                <aside class="local-navigation">
+                    <nav aria-label="Lokale Navigation">
+                        <h3>Auf dieser Seite</h3>
+                        <a href="emissionen">Datenübersicht</a>
+                        <a href="ueber-uns">Über EcoPulse</a>
+                    </nav>
 
-                <nav aria-label="Lokale Navigation">
-                    <a href="#emissionen">Datenübersicht</a>
-                    <a href="#ueber-uns">Über EcoPulse</a>
-                </nav>
-
-                <div class="direction-control">
-                    <label for="directionSelect">
-                        Schreibrichtung
-                    </label>
-
-                    <select id="directionSelect" class="form-select">
-                        <option value="ltr">Links nach rechts (LTR)</option>
-                        <option value="rtl">Rechts nach links (RTL)</option>
-                    </select>
-                </div>
-            </div>
-
-
-            <div class="data-card">
-                <div class="filter-bar">
-                    <div class="filter-field">
-                        <label for="companySearch">
-                            Unternehmen suchen
+                    <div class="direction-control">
+                        <label for="directionSelect">
+                            Schreibrichtung
                         </label>
-                        <input
-                        type="search"
-                        id="companySearch"
-                        class="form-control"
-                        placeholder="Unternehmen eingeben ..."
-                        autocomplete="off"
-                        >
-                    </div>
 
-                    <div class="filter-field">
-                        <label for="countryFilter">
-                            Land auswählen
-                        </label>
                         <select
-                            id="countryFilter"
-                            class="form-select"
-                        >
-                            <option value="">Alle Läner</option>
-                        </select>
-                    </div>
-
-                        <div class="filter-field">
-                            <label for="sortSelect">
-                            Sortieren nach
-                            </label>
-                            <select
-                                id="sortSelect"
-                                class="form-select"
-                            >
-                            <option value="company-asc">
-                                Unternehmen A-Z
+                            id="directionSelect"
+                            class="form-select">
+                        
+                            <option value="trl">
+                                Links nach rechts (LTR)
                             </option>
-                            <option value="company-desc">
-                                Unternehmen Z-A
-                            </option>
-                            <option value="country-asc">
-                                Land A-Z
-                            </option>
-                            <option value="country-desc">
-                                Land Z-A
-                            </option>
-                            <option value="emissions-asc">
-                                Emissionen steigend
-                            </option>
-                            <option value="emissions-desc">
-                                Emissionen absteigend
+                            <option value="rtl">
+                                Rechts nach links (RTL)
                             </option>
                         </select>
                     </div>
+                </aside>
 
+                <div class="content-main">
+                    <div class="data-card">
+                        <div class="filter-bar">
+                            <div class="filter-field">
+                                <label for="companySearch">
+                                    Unternehmen suchen
+                                </label>
+
+                                <input 
+                                    type="search"
+                                    id="companySearch"
+                                    class="form-control"
+                                    placeholder="Unternehmen eingeben ..."
+                                    autocomplete="off"
+                                    >
+                            </div>
+
+                            <div class="filter-field">
+                                <label for="countryFilter">
+                                    Land auswählen
+                                </label>
+                                <select
+                                    id="countryFilter"
+                                    class="form-select"
+                                >
+                                    <option value="">
+                                        Alle Länder
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="filter-field">
+                                <label for="sortSelect">
+                                    Sortieren nach
+                                </label>
+                                <select
+                                    id="sortSelect"
+                                    class="form-select"
+                                >
+                                    <option value="company-asc">
+                                        Unternehmen A-Z
+                                    </option>
+
+                                    <option value="company-desc">
+                                        Unternehmen Z-A
+                                    </option>
+
+                                    <option value="country-asc">
+                                        Land A-Z
+                                    </option>
+
+                                    <option value="country-desc">
+                                        Land Z-A
+                                    </option>
+
+                                    <option value="emissions-asc">
+                                        Emissionen steigend
+                                    </option>
+
+                                    <option value="emissions-desc">
+                                        Emissionen absteigend
+                                    </option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <p
+                            id="resultCount"
+                            class="result-count"
+                            role="status"
+                            aria-live="polite">
+                        </p>
+
+                        <div class="table-responsive">
+                            <table class="table emission-table">
+                                <caption>
+                                    Alle CO₂-Emissionsdaten sind fiktiv und dienen ausschließlich Demonstrationszwecken.
+                                </caption>
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Unternehmen
+                                        </th>
+                                        <th scope="col">
+                                            Land
+                                        </th>
+                                        <th scope="col">
+                                            Branche
+                                        </th>
+                                        <th scoper="col">
+                                            CO₂-Emissionen (t)
+                                        </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="emissionsTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p
+                            id="emptyState"
+                            class="empty-state"
+                            hidden>
+                            Keine passenden Unternehmen gefunden. Bitte passe deine Suche oder Filter an
+                        </p>
+                    </div>
                 </div>
+
             </div>
-
-            <p id="resultCount"
-                class="result-count"
-                role="status"
-                aria-live="polite">
-            </p>
-
-            <div class="table-responsive">
-                <table class="table emission-table">
-
-                    <caption>Alle CO₂-Emissionsdaten sind finktiv und dienen 
-                        ausschließlich Demonstrationszwecken.</caption>
-                    
-                    <thead>
-                        <tr>
-                            <th scope="col">Unternehmen</th>
-                            <th scope="col">Land</th>
-                            <th scope="col">Branche</th>
-                            <th scope="col">CO₂-Emissionen (t)</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="emissionsTableBody"></tbody>
-
-                </table>
-            </div>
-
-            <p id="emptyState"
-                class="empty-state"
-                hidden>Keine passenden Unternehmen gefunden.
-                        Bitte passe deine Suche oder Filter an.
-            </p>
 
         </div>
     </section>
@@ -205,10 +233,10 @@
     <section id="ueber-uns" class="about-section">
         <div class="container">
             <h2>Über EcoPulse</h2>
-            <p>EcoPulse ist eine Non-Profit-Organisation, die sich für die verständliche Darstellung vin Emissionsdaten einsetzt.</p>
+            <p>EcoPulse ist eine Non-Profit-Organisation, die sich für die 
+                verständliche Darstellung von Emissionsdaten einsetzt.</p>
         </div>    
     </section>
-
 
 </main>
 

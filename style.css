@@ -463,3 +463,78 @@ btn-ecopulse:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.local-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    boder-radius: 12px;
+}
+
+.local-navigation nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.local-navigation nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.local-navigation nav a:hover,
+.local-navigation nav a:focus-visible {
+    color: var(--color-cyan);
+}
+
+.direction-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.direction-control label {
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.direction-control .form-select {
+    min-width: 220px;
+    background-color: #07131D;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.rtl-layout .local-navigation {
+    flex-direction: row-reverse;
+}
+
+.local-navigation, .data-section, .about-section {
+    direction: ltr;
+    text-align: left;
+}
+
+@media (max-width: 767px) {
+    .local-navigation,
+    .direction-control {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .local-navigation nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .direction-control .form-select {
+        min-width: 0;
+        width: 100%;
+    }
+}
