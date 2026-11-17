@@ -1,27 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("mainNavigation");
+    const header = document.querySelector(".site-header");
 
-    if (!menu) { 
-        return;
-    }
+
+    if (!menu || !header) return;
 
     const links = menu.querySelectorAll(".nav-link");
 
-    links.forEach(function (link) {
+    function scrollToSection(target) {
+        const headerHeight = header.getBoundingClientRect().height;
 
-        link.addEventListener("click", function () {
-        
-            if (window.innerWidth < 992) {
+        const targetPosition = target.getBoundingClientRect().top + 
+        window.scrollY;
 
-                const collapse = bootstrap.Collapse.getOrCreateInstance(
+        window.scrollTo({
+            top: Math.max(
+                0, 
+                targetPosition - headerHeight - 20
+            ),
+            behavior: "smooth"
+    });
+}
+
+links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        const targetId = link.getAttribute("href");
+
+        if (!targetId || !targetId.startsWith("#")) {
+            return;
+        }
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        event.preventDefault();
+
+        const isMobile = window.innerWidth < 992;
+        const isMenuOpen = menu.classList.contains("show");
+
+        if (isMobile && isMenuOpen) {
+            const collapse =
+                bootstrap.Collapse.getOrCreateInstance(
                     menu,
                     { toggle: false }
                 );
 
-                collapse.hide();
-            }
-        });
+            menu.addEventListener(
+                "hidden.bs.collapse",
+                function () {
+                    scrollToSection(target);
+                },
+                { once: true }
+            );
+
+            collapse.hide();
+        } else {
+            scrollToSection(target);
+        }
+        history.replaceState(null, "", targetId);
     });
+});
 });
 
 

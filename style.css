@@ -14,7 +14,9 @@
     }
 
     #emissionen,
-    #ueber-uns {
+    #ueber-uns,
+    #impressum,
+    #datenschutz {
         scroll-margin-top: 110px;
     }
 
